@@ -14,3 +14,6 @@ Intended tech stack:
   * terraform
   * GraphQL
   * Apollo
+
+# get started
+Run npm install
