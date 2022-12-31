@@ -9,7 +9,9 @@ const mikro_orm_config_1 = __importDefault(require("./mikro-orm.config"));
 const main = async () => {
     const orm = await core_1.MikroORM.init(mikro_orm_config_1.default);
     await orm.getMigrator().up();
-    const post = orm.em.create(Post_1.Post, { title: 'my first post' });
+    const emFork = orm.em.fork();
+    const post = emFork.create(Post_1.Post, { title: "my first post" });
+    await emFork.persistAndFlush(post);
     await orm.em.persistAndFlush(post);
 };
 main().catch((err) => {

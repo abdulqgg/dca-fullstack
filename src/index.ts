@@ -7,7 +7,11 @@ const main = async () => {
     const orm = await MikroORM.init(microConfig);
     await orm.getMigrator().up();
 
-    const post = orm.em.create(Post, {title: 'my first post'});
+    const emFork = orm.em.fork();
+    const post = emFork.create(Post, { title: "my first post" });
+
+    await emFork.persistAndFlush(post);
+
     await orm.em.persistAndFlush(post);
 };
 
