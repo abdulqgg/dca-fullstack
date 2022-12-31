@@ -12,7 +12,8 @@ const main = async () => {
     const emFork = orm.em.fork();
     const post = emFork.create(Post_1.Post, { title: "my first post" });
     await emFork.persistAndFlush(post);
-    await orm.em.persistAndFlush(post);
+    const post1 = await orm.em.find(Post_1.Post, {});
+    console.log(post1);
 };
 main().catch((err) => {
     console.error(err);

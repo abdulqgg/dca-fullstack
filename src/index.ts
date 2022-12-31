@@ -12,7 +12,9 @@ const main = async () => {
 
     await emFork.persistAndFlush(post);
 
-    await orm.em.persistAndFlush(post);
+    const post1 = await orm.em.find(Post, {});
+    console.log(post1);
+
 };
 
 main().catch((err) => {
