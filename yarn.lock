@@ -27,56 +27,56 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mikro-orm/cli@^5.6.2":
-  "integrity" "sha512-BbDobUZ5NZ18EQmprFih0pwbdaQi+p1Ezslhtyl0vHp+cZKSJK3okQY7/I53IjOSK+Ye4cNo/w+jHe2WSIWjNQ=="
-  "resolved" "https://registry.npmjs.org/@mikro-orm/cli/-/cli-5.6.2.tgz"
-  "version" "5.6.2"
+"@mikro-orm/cli@^5.6.3":
+  "integrity" "sha512-4LY14cQ84LdiJlWsOGXlpUmlju1uvJHfNptrMEPVbeZ2mT5FKBJ3nqCYVyRwbPqFmohRSGPP9fcOwdifoRraag=="
+  "resolved" "https://registry.npmjs.org/@mikro-orm/cli/-/cli-5.6.3.tgz"
+  "version" "5.6.3"
   dependencies:
-    "@mikro-orm/core" "~5.6.2"
-    "@mikro-orm/knex" "~5.6.2"
+    "@mikro-orm/core" "~5.6.3"
+    "@mikro-orm/knex" "~5.6.3"
     "fs-extra" "11.1.0"
     "tsconfig-paths" "4.1.1"
     "yargonaut" "1.1.4"
     "yargs" "15.4.1"
 
-"@mikro-orm/core@^5.0.0", "@mikro-orm/core@^5.6.2", "@mikro-orm/core@~5.6.2":
-  "integrity" "sha512-FDKJBL1gjT9d36E9dyC5S9OxoeEQzy7lIj/SpijU8BDDC6gpn27HJ00DLqG+gLdepXBYdDdf3B/ELi+OGxZKCw=="
-  "resolved" "https://registry.npmjs.org/@mikro-orm/core/-/core-5.6.2.tgz"
-  "version" "5.6.2"
+"@mikro-orm/core@^5.0.0", "@mikro-orm/core@^5.6.3", "@mikro-orm/core@~5.6.3":
+  "integrity" "sha512-vbBCleapR9TfYOdvowF20IvUOOpdj8kRSJHlFNYzoZ5mZpZ0a/x9DwlmgxEjSXEzv70pEqjmT/nEgnKg6KaTYQ=="
+  "resolved" "https://registry.npmjs.org/@mikro-orm/core/-/core-5.6.3.tgz"
+  "version" "5.6.3"
   dependencies:
     "acorn-loose" "8.3.0"
     "acorn-walk" "8.2.0"
     "dotenv" "16.0.3"
     "fs-extra" "11.1.0"
     "globby" "11.1.0"
-    "mikro-orm" "~5.6.2"
+    "mikro-orm" "~5.6.3"
     "reflect-metadata" "0.1.13"
 
-"@mikro-orm/knex@~5.6.2":
-  "integrity" "sha512-5exuHVL/go2PWIYEE1u8f4Ds8spBUij8sd2afoB1R7yj/maVPr1QnYCbbzdL0gsktLsSw9mAzpl5Co2VBesj3w=="
-  "resolved" "https://registry.npmjs.org/@mikro-orm/knex/-/knex-5.6.2.tgz"
-  "version" "5.6.2"
+"@mikro-orm/knex@~5.6.3":
+  "integrity" "sha512-mCjSoB+TaYmsSvvXV3QrXu1zfCMsMxI2RYmuy/DCfuDHZr1KXS6LWPVUoTS259OSXYcjQwUj5XlO5Djb0SSe4w=="
+  "resolved" "https://registry.npmjs.org/@mikro-orm/knex/-/knex-5.6.3.tgz"
+  "version" "5.6.3"
   dependencies:
     "fs-extra" "11.1.0"
     "knex" "2.3.0"
     "sqlstring" "2.3.3"
 
-"@mikro-orm/migrations@^5.0.0", "@mikro-orm/migrations@^5.6.2":
-  "integrity" "sha512-3Wq+NBlpVH7+yotukamk19I2zD0kGb7R3WzYWBxfvJlc9GCiDFF4fKLuzxH4bmTR2Jyni84CUX0g6kIcqUXowg=="
-  "resolved" "https://registry.npmjs.org/@mikro-orm/migrations/-/migrations-5.6.2.tgz"
-  "version" "5.6.2"
+"@mikro-orm/migrations@^5.0.0", "@mikro-orm/migrations@^5.6.3":
+  "integrity" "sha512-QrWDCpm5hiU5tJa+YPAN39I0agKlrLcD00esPWCQtGM4YKn8HiLflMG7AHX5AxThCUvz/E5ZfBFD7hLVJ1Spig=="
+  "resolved" "https://registry.npmjs.org/@mikro-orm/migrations/-/migrations-5.6.3.tgz"
+  "version" "5.6.3"
   dependencies:
-    "@mikro-orm/knex" "~5.6.2"
+    "@mikro-orm/knex" "~5.6.3"
     "fs-extra" "11.1.0"
     "knex" "2.3.0"
     "umzug" "3.2.1"
 
-"@mikro-orm/postgresql@^5.0.0", "@mikro-orm/postgresql@^5.6.2":
-  "integrity" "sha512-sqwIcrKmtG2LzB5nBgPN6sAOuDAO0puuRKGMhCNWv+Un741DSxQPPi+Bj5Qgucm3y3+ymEB9pkmXpSOReX9f3A=="
-  "resolved" "https://registry.npmjs.org/@mikro-orm/postgresql/-/postgresql-5.6.2.tgz"
-  "version" "5.6.2"
+"@mikro-orm/postgresql@^5.0.0", "@mikro-orm/postgresql@^5.6.3":
+  "integrity" "sha512-kKFuzLjq3eHlh2MQN9n10SLFD36PP9P6633k69QoGYH19/YuaIq/EzW8UnMXvAJwmRF2go2wAJ6pEfVrWugPnA=="
+  "resolved" "https://registry.npmjs.org/@mikro-orm/postgresql/-/postgresql-5.6.3.tgz"
+  "version" "5.6.3"
   dependencies:
-    "@mikro-orm/knex" "~5.6.2"
+    "@mikro-orm/knex" "~5.6.3"
     "pg" "8.8.0"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -663,10 +663,10 @@
     "braces" "^3.0.2"
     "picomatch" "^2.3.1"
 
-"mikro-orm@~5.6.2":
-  "integrity" "sha512-LzKIAtA/Zj8qO1yKNRJLYI+Vywm1nBQqb89vPM7abZBnqqarGB89CWTlAt6DfaG9bNk7v+FK0atO5dqMEfLT1Q=="
-  "resolved" "https://registry.npmjs.org/mikro-orm/-/mikro-orm-5.6.2.tgz"
-  "version" "5.6.2"
+"mikro-orm@~5.6.3":
+  "integrity" "sha512-sqka8FuTl+ZuNl54aqiHVXvEDjRSsJy+xBQ5lANRhKRqnie39QpHbPCrphlu5okCkrYKjR6HDyKSOpe0B06a5A=="
+  "resolved" "https://registry.npmjs.org/mikro-orm/-/mikro-orm-5.6.3.tgz"
+  "version" "5.6.3"
 
 "minimatch@^3.0.2", "minimatch@^3.1.1", "minimatch@^3.1.2":
   "integrity" "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw=="
