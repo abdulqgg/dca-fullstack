@@ -17,6 +17,7 @@
     "@types/node": "^18.11.18",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
     "typescript": "^4.9.4"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
     "express": "^4.18.2",
     "graphql": "^15.7.2",
     "pg": "^8.8.0",
+    "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1",
     "umzug": "^3.2.1"
   },
