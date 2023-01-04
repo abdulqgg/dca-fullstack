@@ -60,13 +60,35 @@ UserResponse = __decorate([
 ], UserResponse);
 let UserResolver = class UserResolver {
     async register(options, { em }) {
+        if (options.username.length <= 2) {
+            return {
+                errors: [{
+                        field: 'username',
+                        message: 'username is too short'
+                    }]
+            };
+        }
         const hashedPassword = await argon2_1.default.hash(options.password);
         const user = em.create(User_1.User, {
             username: options.username,
             password: hashedPassword,
         });
-        await em.persistAndFlush(user);
-        return user;
+        try {
+            await em.persistAndFlush(user);
+        }
+        catch (err) {
+            if (err.code === '2305' || err.detail.includes('already exists')) {
+                return {
+                    errors: [{
+                            field: 'username',
+                            message: 'username already exists'
+                        }]
+                };
+            }
+        }
+        return {
+            user
+        };
     }
     async login(options, { em }) {
         const user = await em.findOne(User_1.User, { username: options.username });
@@ -91,10 +113,9 @@ let UserResolver = class UserResolver {
             user,
         };
     }
-    ;
 };
 __decorate([
-    (0, type_graphql_1.Mutation)(() => User_1.User),
+    (0, type_graphql_1.Mutation)(() => UserResponse),
     __param(0, (0, type_graphql_1.Arg)('options')),
     __param(1, (0, type_graphql_1.Ctx)()),
     __metadata("design:type", Function),
