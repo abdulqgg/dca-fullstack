@@ -21,3 +21,5 @@ Intended tech stack:
 
 `yarn watch`
 `yarn dev/start/start2`
+
+`redis-server`
