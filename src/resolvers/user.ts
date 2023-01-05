@@ -48,6 +48,8 @@ export class UserResolver {
 
         const hashedPassword = await argon2.hash(options.password)
         const user = em.create(User, { 
+            createdAt: new Date(),
+            updatedAt: new Date(),
             username: options.username,
             password: hashedPassword,
         })
@@ -94,12 +96,10 @@ export class UserResolver {
             }
         }
 
-        req.session!.userId = user.id;
+        req.session.userId = user.id;
         
         return {
             user,
         };
     }
-    }
-    
 }

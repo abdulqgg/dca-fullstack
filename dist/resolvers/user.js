@@ -70,6 +70,8 @@ let UserResolver = class UserResolver {
         }
         const hashedPassword = await argon2_1.default.hash(options.password);
         const user = em.create(User_1.User, {
+            createdAt: new Date(),
+            updatedAt: new Date(),
             username: options.username,
             password: hashedPassword,
         });
