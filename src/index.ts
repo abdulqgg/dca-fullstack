@@ -23,7 +23,7 @@ const main = async () => {
 
     const RedisStore = connectRedis(session)
     const redisClient = createClient({ legacyMode: true })
-    //redisClient.connect().catch(console.error)
+    redisClient.connect().catch(console.error)
     
     app.use(
       session({
@@ -37,7 +37,8 @@ const main = async () => {
             maxAge: 1000 * 60 * 60 * 24 * 365 * 10, // 10 years
             httpOnly: true,
             sameSite: 'lax',
-            secure: __prod__// cookie only works in https
+            secure: false,//__prod__, // cookie only works in https,
+            //port: 4000
         },
         saveUninitialized: false,
         secret: "ihwkdhidsufdniek", // password for cookie
@@ -55,7 +56,7 @@ const main = async () => {
 
     await apolloServer.start();
 
-    apolloServer.applyMiddleware({ app });
+    apolloServer.applyMiddleware({ app, cors: {credentials: true} });
 
     app.listen(4000, () => {
         console.log('server started on localhost:4000')
