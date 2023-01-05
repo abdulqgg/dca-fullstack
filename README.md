@@ -15,5 +15,11 @@ Intended tech stack:
   * GraphQL
   * Apollo
 
-# get started
-Run npm install
+# get started run
+`npm install`
+`npm install argon2`
+
+`yarn watch`
+`yarn dev/start/start2`
+
+`redis-server`
