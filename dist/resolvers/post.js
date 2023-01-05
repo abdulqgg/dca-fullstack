@@ -23,7 +23,7 @@ let PostResolver = class PostResolver {
         return em.findOne(Post_1.Post, { id });
     }
     async createPost(title, { em }) {
-        const post = em.create(Post_1.Post, { title });
+        const post = em.create(Post_1.Post, { title: title, createdAt: new Date(), updatedAt: new Date() });
         await em.persistAndFlush(post);
         return post;
     }

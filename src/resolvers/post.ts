@@ -21,7 +21,7 @@ export class PostResolver {
     async createPost(
         @Arg("title") title: string,
         @Ctx() { em }: MyContext): Promise<Post> {
-        const post = em.create(Post, { title });
+        const post = em.create(Post, { title: title, createdAt: new Date(), updatedAt: new Date() });
         await em.persistAndFlush(post);
         return post;
     }
