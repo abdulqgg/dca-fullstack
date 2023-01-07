@@ -9,7 +9,7 @@ import { HelloResolver } from "./resolvers/hello";
 import { PostResolver } from "./resolvers/post";
 import { UserResolver } from "./resolvers/user";
 import session from "express-session";
-import { createClient } from "redis";
+import * as redis from "redis";
 import connectRedis from "connect-redis";
 import { MyContext } from "./types";
 
@@ -21,30 +21,24 @@ const main = async () => {
 
     const app = express();
 
-    const RedisStore = connectRedis(session)
-    const redisClient = createClient({ legacyMode: true })
-    redisClient.connect().catch(console.error)
-    
+    const RedidStore = connectRedis(session);
+    const redisClient = redis.createClient({
+
+    });
+
     app.use(
-      session({
-        name: 'qid', // name for cookie
-        store: new RedisStore({ 
-            client: redisClient,
-            disableTTL: true,
-            disableTouch: true
-        }),
-        cookie: {
-            maxAge: 1000 * 60 * 60 * 24 * 365 * 10, // 10 years
+        session({
+          secret: 'keyboard cat',
+          resave: false,
+          saveUninitialized: false,
+          cookie: {
+            maxAge: 1000 * 60 * 60 * 24, // 1 day
             httpOnly: true,
-            sameSite: 'lax',
-            secure: false,//__prod__, // cookie only works in https,
-            //port: 4000
-        },
-        saveUninitialized: false,
-        secret: "ihwkdhidsufdniek", // password for cookie
-        resave: false,
-      })
-    )
+            sameSite: true,
+            secure: process.env.NODE_ENV === 'production',
+          },
+        })
+      );
 
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
