@@ -35,7 +35,6 @@ const main = async () => {
             maxAge: 1000 * 60 * 60 * 24, // 1 day
             httpOnly: true,
             sameSite: true,
-            secure: process.env.NODE_ENV === 'production',
           },
         })
       );

@@ -52,7 +52,6 @@ const main = async () => {
             maxAge: 1000 * 60 * 60 * 24,
             httpOnly: true,
             sameSite: true,
-            secure: process.env.NODE_ENV === 'production',
         },
     }));
     const apolloServer = new apollo_server_express_1.ApolloServer({
