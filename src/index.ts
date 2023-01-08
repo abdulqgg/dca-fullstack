@@ -12,6 +12,7 @@ import session from "express-session";
 import * as redis from "redis";
 import connectRedis from "connect-redis";
 import { MyContext } from "./types";
+import Redis from "ioredis";
 
 
 const main = async () => {
@@ -21,23 +22,26 @@ const main = async () => {
 
     const app = express();
 
-    const RedidStore = connectRedis(session);
-    const redisClient = redis.createClient({
 
-    });
+    
+    
+    // const RedidStore = connectRedis(session);
+    // const redisClient = redis.createClient({
 
-    app.use(
-        session({
-          secret: 'keyboard cat',
-          resave: false,
-          saveUninitialized: false,
-          cookie: {
-            maxAge: 1000 * 60 * 60 * 24, // 1 day
-            httpOnly: true,
-            sameSite: true,
-          },
-        })
-      );
+    // });
+
+    // app.use(
+    //     session({
+    //       secret: 'keyboard cat',
+    //       resave: false,
+    //       saveUninitialized: false,
+    //       cookie: {
+    //         maxAge: 1000 * 60 * 60 * 24, // 1 day
+    //         httpOnly: true,
+    //         sameSite: true,
+    //       },
+    //     })
+    //   );
 
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
