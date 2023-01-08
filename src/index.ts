@@ -22,8 +22,9 @@ const main = async () => {
 
     const app = express();
 
+    const redis = new Redis();
+    redis.set('key','value');
 
-    
     
     // const RedidStore = connectRedis(session);
     // const redisClient = redis.createClient({
